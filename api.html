@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let p = fetch("https://jsonplaceholder.typicode.com/todos").then((response) => {
+            response.json().then((result)=>{
+                // console.log(result);
+                result.map((val , index) =>{
+                    console.log( index , val );
+                })
+                
+                localStorage.setItem("result" , JSON.stringify(result));    
+            })
+        })
+        
+        
+    </script>
+</body>
+
+</html>

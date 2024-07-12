@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let fetchData = async (url) => {
+        let res = await fetch(url);
+        let result = await res.json();
+        return result;
+      };
+
+      let getAllData = async () => {
+        let api1 = await fetchData(
+          "https://jsonplaceholder.typicode.com/todos"
+        );
+        let api2 = await fetchData("https://fakestoreapi.com/products");
+
+        console.log(api1, "api1");
+        console.log(api2, "api2");
+      };
+
+      getAllData();
+    </script>
+  </body>
+</html>
